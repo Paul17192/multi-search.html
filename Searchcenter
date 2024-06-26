@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Search</title>
+    <script type="text/javascript">
+        function multiSearch(query) {
+            var engines = [
+                'https://www.google.com/search?q=' + query,
+                'https://en.wikipedia.org/wiki/Special:Search?search=' + query,
+                'https://www.imdb.com/find?q=' + query,
+                'https://www.thesaurus.com/browse/' + query,
+                'https://whalewisdom.com/search?q=' + query,
+                'https://twitter.com/search?q=' + query,
+                'https://seekingalpha.com/symbol/' + query,
+                'https://openinsider.com/search?q=' + query,
+                'https://stockcharts.com/h-sc/ui?s=' + query,
+                'https://secsearch.sec.gov/search?utf8=✓&query=' + query
+            ];
+            for (var i = 0; i < engines.length; i++) {
+                window.open(engines[i], '_blank');
+            }
+        }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        var query = prompt("Suchbegriff eingeben:");
+        if (query) {
+            multiSearch(query);
+        }
+    </script>
+</body>
+</html>
